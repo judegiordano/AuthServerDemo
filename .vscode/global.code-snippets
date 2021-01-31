@@ -1,0 +1,29 @@
+{
+	// Place your TwitchTax workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	"New Model Entity": {
+		"prefix": "nme",
+		"body": [
+			"import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, } from \"typeorm\";",
+			"",
+			"@Entity(\"${TM_FILENAME_BASE}\", { schema: \"dbo\" })",
+			"export default class ${TM_FILENAME_BASE} extends BaseEntity {",
+			"\t@PrimaryGeneratedColumn({ type: \"int\", name: \"id\" })",
+			"\tid: number;",
+			"",
+			"\t@Column(\"varchar\", { name: \"someField\", nullable: true, length: 255 })",
+			"\tsomeField: string | null;$0",
+			"}"
+		]
+	},
+	"Console.Log": {
+		"prefix": "clg",
+		"body": [
+			"console.log($0)"
+		]
+	}
+}
