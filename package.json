@@ -18,7 +18,7 @@
   "main": "./build/index.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/judegiordano/AuthServerDemo"
   },
   "scripts": {
     "prebuild": "eslint --fix --ext .ts,.tsx .",

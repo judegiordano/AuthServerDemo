@@ -10,7 +10,7 @@
 * Ip Address Throttling
 * SQLITE Db Backed
 * Abstract Factory Design Pattern
- 
+ ---
 ## Steps For Local Usage
 * Clone Repository, VsCode is the optimal setting for using the Launch.json
 * Run `npm i` in the root of the project, this will install the needed dependencies. This will also run a postinstall script to build the project in a /build folder
@@ -30,7 +30,7 @@ NODE_ENV=<'development' | 'production'> // if not defined, defaults to 'developm
 * if you are not in VsCode, you can set `NODE_ENV` in `.env` to either "production" or "development"
 * The server running under production will use ip throttling to slow down too many requests made within a certain interval, it also uses clustering to spawn a number of worker threads equal to the amount of the cpu's logical cores. Development will have request logging, response time header, and SQL query logging all set to true. It also uses just a single worker thread.
 * `npm run start` will start the server in /build if you are not using a `launch.json` configuration
- 
+ ---
 ## Server Functions
 * By default, will run on port 3000.
 * User data is returned in the form of a jsonwebtoken
@@ -60,4 +60,25 @@ Authorization: Bearer <string> // jsonwebtoken
 * This route will check if the user exists, and then check the plaintext password and check it against the hash saved in the database using the same hashing algorithm.
 * A successful request made on this route will also return a signed jwt.
 * By default, most things get logged into a file `combined.log` and `error.log` in the root of the project.
-
+---
+## Sources
+* typescript https://github.com/microsoft/TypeScript
+* bcrypt https://github.com/kelektiv/node.bcrypt.js#readme
+* cluster https://nodejs.org/api/cluster.html
+* dateformat https://github.com/felixge/node-dateformat
+* dotenv https://github.com/motdotla/dotenv
+* jsonwebtoken https://github.com/auth0/node-jsonwebtoken
+* koa https://koajs.com/
+* koa-bodyparser https://github.com/koajs/bodyparser
+* koa-helmet https://github.com/venables/koa-helmet
+* koa-json https://github.com/koajs/json
+* koa-logger https://github.com/koajs/logger
+* koa-response-time https://github.com/koajs/response-time
+* koa-router https://github.com/koajs/router
+* koa2-ratelimit https://github.com/ysocorp/koa2-ratelimit
+* reflect-metadata https://github.com/rbuckton/reflect-metadata
+* sqlite3 https://github.com/mapbox/node-sqlite3
+* typeorm https://github.com/typeorm/typeorm
+* winston https://github.com/winstonjs/winston
+* husky https://github.com/typicode/husky
+* eslint https://github.com/eslint/eslint
